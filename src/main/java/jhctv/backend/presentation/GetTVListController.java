@@ -9,16 +9,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class GetTVListController {
-//    private final GetTVListService getTVListService;
+    private final GetTVListService getTVListService;
 
-//    public GetTVListController(GetTVListService getTVListService) {
-//        this.getTVListService = getTVListService;
-//    }
+    public GetTVListController(GetTVListService getTVListService) {
+        this.getTVListService = getTVListService;
+    }
 
     @RequestMapping(value = "/getTvList", method = RequestMethod.GET)
     @ResponseStatus(value = HttpStatus.OK)
     public String getTvList() {
-//        return getTVListService.getTVListOutputEntity().getTest();
-        return "test";
+        return getTVListService.getTVListOutputEntity().getTest();
+//        return "test";
     }
 }
